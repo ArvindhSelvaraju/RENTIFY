@@ -11,7 +11,7 @@ const app = express()
 
 // Use CORS middleware
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your actual frontend domain
+    origin: 'https://rentify-frontend-otfe.onrender.com', // Replace with your actual frontend domain
     optionsSuccessStatus: 200
 }))
   
