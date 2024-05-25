@@ -21,7 +21,7 @@ export const HouseForm = () => {
     const user_id = user._id 
     const house = {place,area,noOfBedrooms:bdrooms,noOfBathrooms:btrooms,nearby,user_id};
 
-    const response = await fetch('http://localhost:4000/api/houses',{
+    const response = await fetch('https://rentify-gr27.onrender.com/api/houses',{
         method: 'POST',
         body: JSON.stringify(house),
         headers: {

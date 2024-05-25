@@ -11,7 +11,7 @@ export const Home = () => {
 
   useEffect(() => {
     const fetchHouses = async () => {
-      const response = await fetch("http://localhost:4000/api/houses", {
+      const response = await fetch("https://rentify-gr27.onrender.com/api/houses", {
         headers: {
           "Content-Type": "application/json",
           userid: user._id,

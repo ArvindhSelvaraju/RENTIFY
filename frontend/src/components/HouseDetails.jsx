@@ -23,7 +23,7 @@ export const HouseDetails = ({ house }) => {
 
   const handleLike = async () => {
     const updated = likes+1
-    const response = await fetch("http://localhost:4000/api/houses/" + house._id,{
+    const response = await fetch("https://rentify-gr27.onrender.com/api/houses/" + house._id,{
       method: 'PATCH',
       body: JSON.stringify({updated}),
       headers: {
@@ -46,7 +46,7 @@ export const HouseDetails = ({ house }) => {
 
   const handleDislike = async () => {
     const updated = likes-1
-    const response = await fetch("http://localhost:4000/api/houses/" + house._id,{
+    const response = await fetch("https://rentify-gr27.onrender.com/api/houses/" + house._id,{
       method: 'PATCH',
       body: JSON.stringify({updated}),
       headers: {
@@ -75,7 +75,7 @@ export const HouseDetails = ({ house }) => {
 
   const handleDelete = async () => {
     const response = await fetch(
-      "http://localhost:4000/api/houses/" + house._id,
+      "https://rentify-gr27.onrender.com/api/houses/" + house._id,
       {
         method: "DELETE",
         headers: {
@@ -92,7 +92,7 @@ export const HouseDetails = ({ house }) => {
   };
 
   const handleClick = async () => {
-    const response = await fetch("http://localhost:4000/api/user", {
+    const response = await fetch("https://rentify-gr27.onrender.com/api/user", {
       headers: {
         houseid: house._id,
       },

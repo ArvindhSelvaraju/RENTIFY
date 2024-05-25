@@ -15,7 +15,7 @@ export const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    const response = await fetch('http://localhost:4000/api/user/signup',{
+    const response = await fetch('https://rentify-gr27.onrender.com/api/user/signup',{
         method:'POST',
         headers: {
           "Content-Type":"application/json"
