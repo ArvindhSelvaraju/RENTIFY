@@ -16,12 +16,14 @@ export const HouseForm = () => {
 
   const navigate = useNavigate()
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const user_id = user._id 
     const house = {place,area,noOfBedrooms:bdrooms,noOfBathrooms:btrooms,nearby,user_id};
 
-    const response = await fetch('https://rentify-gr27.onrender.com/api/houses',{
+    const response = await fetch(`${apiUrl}/api/houses`,{
         method: 'POST',
         body: JSON.stringify(house),
         headers: {

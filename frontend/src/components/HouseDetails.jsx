@@ -3,7 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import { HouseContext } from "../context/HouseContext";
 import { AuthContext } from "../context/AuthContext";
@@ -21,11 +21,15 @@ export const HouseDetails = ({ house }) => {
   const [viewDetails, setViewDetails] = useState(false);
   const [seller, setSeller] = useState(null);
 
-  const handleLike = async () => {
+  const apiUrl = import.meta.env.VITE_API_URL;
+
+  const handleLike = async (e) => {
+    e.preventDefault();
+
     const updated = likes+1
-    const response = await fetch("https://rentify-gr27.onrender.com/api/houses/" + house._id,{
+    const response = await fetch(`${apiUrl}/api/houses/` + house._id,{
       method: 'PATCH',
-      body: JSON.stringify({updated}),
+      body: JSON.stringify({likes:updated}),
       headers: {
         "Content-Type":"application/json"
       }
@@ -44,11 +48,13 @@ export const HouseDetails = ({ house }) => {
     }
   };
 
-  const handleDislike = async () => {
+  const handleDislike = async (e) => {
+    e.preventDefault();
+
     const updated = likes-1
-    const response = await fetch("https://rentify-gr27.onrender.com/api/houses/" + house._id,{
+    const response = await fetch(`${apiUrl}/api/houses/` + house._id,{
       method: 'PATCH',
-      body: JSON.stringify({updated}),
+      body: JSON.stringify({likes:updated}),
       headers: {
         "Content-Type":"application/json"
       }
@@ -75,7 +81,7 @@ export const HouseDetails = ({ house }) => {
 
   const handleDelete = async () => {
     const response = await fetch(
-      "https://rentify-gr27.onrender.com/api/houses/" + house._id,
+      `${apiUrl}/api/houses/` + house._id,
       {
         method: "DELETE",
         headers: {
@@ -92,7 +98,7 @@ export const HouseDetails = ({ house }) => {
   };
 
   const handleClick = async () => {
-    const response = await fetch("https://rentify-gr27.onrender.com/api/user", {
+    const response = await fetch(`${apiUrl}/api/user`, {
       headers: {
         houseid: house._id,
       },
@@ -189,7 +195,7 @@ export const HouseDetails = ({ house }) => {
             padding: "10px",
           }}
         >
-          {likes}
+          &#x2764; {likes}
           {user.userType === "Buyer" ? (
             <>
               {liked ? (

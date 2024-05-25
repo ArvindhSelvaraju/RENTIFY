@@ -9,9 +9,11 @@ export const Home = () => {
   const { houses, dispatch } = useContext(HouseContext);
   const { user } = useContext(AuthContext);
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     const fetchHouses = async () => {
-      const response = await fetch("https://rentify-gr27.onrender.com/api/houses", {
+      const response = await fetch(`${apiUrl}/api/houses`, {
         headers: {
           "Content-Type": "application/json",
           userid: user._id,

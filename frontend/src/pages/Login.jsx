@@ -8,10 +8,12 @@ export const Login = () => {
 
   const {dispatch} = useContext(AuthContext)
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    const response = await fetch('https://rentify-gr27.onrender.com/api/user/login',{
+    const response = await fetch(`${apiUrl}/api/user/login`,{
         method:'POST',
         headers: {
             "Content-Type":"application/json"
