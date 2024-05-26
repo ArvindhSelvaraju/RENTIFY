@@ -9,7 +9,7 @@ const userRoutes = require('./routes/user')
 // express app
 const app = express()
 
-const clientURL = process.env.NODE_ENV==='production' ? 'https://rentify-frontend-otfe.onrender.com':'http://localhost:5174';
+const clientURL = (process.env.NODE_ENV==='production' ? 'https://rentify-frontend-otfe.onrender.com':'http://localhost:5173')
 // Use CORS middleware
 app.use(cors({
     origin: clientURL, // Replace with your actual frontend domain
