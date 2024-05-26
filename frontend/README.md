@@ -1,8 +1,37 @@
-# React + Vite
+# Rentify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Title : Rentify
 
-Currently, two official plugins are available:
+Frameworks used :
+    => Client : React JS
+    => Server : Node JS (Express JS)
+    => Database : MongoDb Atlas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Deployed Link: https://rentify-frontend-otfe.onrender.com
+
+
+
+Instructions to run the project on local machine :
+    -> Open terminal
+    -> Run the command "npm install" to download node_modules
+
+
+    -> Open a new terminal
+    -> Go to the backend folder by running "cd backend"
+    -> Run the command "npm install" to download node_modules
+    -> Create a dotenv file in the backend folder, to initialize environment variables
+            * NODE_ENV=development
+            * PORT=4000
+            * MONGO_URI=mongodb+srv://arvindh:Password@rentify.5yzhvsr.mongodb.net/?retryWrites=true&w=majority&appName=RENTIFY
+    -> Then, start the backend server by executing "npm run dev"
+
+
+
+    -> Open a new terminal
+    -> Move to the frontend folder by running "cd frontend"
+    -> Run the command "npm install" to download node_modules
+
+    -> Create a dotenv file in the backend folder, to initialize environment variables
+            * VITE_API_URL=http://localhost:4000
+
+    -> Then, start the frontend vite-react-app using "npm run dev"
