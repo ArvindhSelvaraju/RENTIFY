@@ -31,6 +31,7 @@ app.use('/api/user', userRoutes)
 
 // Serve static files from the React app
 const buildPath = path.join(__dirname, '../frontend/dist');
+console.log(__dirname,'Serving static files from:', buildPath);
 app.use(express.static(buildPath));
 
 // The "catchall" handler: for any request that doesn't match one above, send back React's index.html file
