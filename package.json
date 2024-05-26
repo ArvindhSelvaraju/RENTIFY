@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-server": "cd frontend && npm install && cd ../backend && npm install",
-    "start-server": "cd frontend && npm run build && cd ../backend && npm run start",
+    "install-server": "npm run install-client && cd backend && npm install",
+    "start-server": "npm run built-client && cd backend && npm run start",
     "install-client": "cd frontend && npm install",
     "build-client": "cd frontend && npm run build",
     "start-client": "cd frontend && npm run dev"
